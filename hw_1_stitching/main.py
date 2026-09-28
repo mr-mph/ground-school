@@ -45,6 +45,7 @@ for previous, current in tqdm(
         np.mean(np.abs(current_f[scroll:] - previous_f[: height - scroll]))
         for scroll in range(0, max_scroll + 1)  # include 0 for no scroll
     ]
+
     scroll = int(np.argmin(errors))
     if scroll > 0:
         strips.append(current[:scroll])
